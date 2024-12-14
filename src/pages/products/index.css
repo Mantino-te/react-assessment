@@ -1,0 +1,86 @@
+/* features/products/components/index.css */
+
+.masonry {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+  margin: -8px; /* Negative margin for gutter adjustment */
+}
+
+.product-card {
+  flex: 1 0 21%; /* Flex-grow, flex-shrink, and basis (approx. 4 items per row) */
+  margin: 8px; /* Space between items */
+  max-width: calc(25% - 16px); /* Ensures a maximum width for each card */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: auto; /* Let height adjust based on content */
+  max-height: 250px; /* Set a maximum height for images */
+  object-fit: cover;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.product-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 10px;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2ecc71;
+  margin: auto; /* Center price */
+}
+
+.add-to-cart-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: bg-color 0.3s ease;
+  display: block; /* Make it a block element for centering */
+}
+
+.add-to-cart-button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-card {
+    flex-basis: calc(
+      50% - 16px
+    ); /* Adjust for smaller screens (2 items per row) */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    flex-basis: calc(100% - 16px); /* Full width on mobile */
+  }
+}
